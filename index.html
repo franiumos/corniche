@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<title>Corniche</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>:root{--ink:#f3eee4;--ink-dim:#f3eee4a8;--glass:#0a0e1294;--glass-line:#f3eee424;--accent:#f6c400;--accent-ink:#1a1400;--sea:#0b2532;--warn:#ff8a5c;--font-display:"Big Shoulders Display", "Arial Narrow", "Helvetica Neue", sans-serif;--font-body:"Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;--lightningcss-light: ;--lightningcss-dark:initial;color-scheme:dark}html,body{height:100%}body{background:var(--sea);color:var(--ink);font-family:var(--font-body);-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;touch-action:none;margin:0;font-size:15px;overflow:hidden}canvas#view{width:100%;height:100%;display:block;position:fixed;inset:0}.layer{pointer-events:none;position:fixed;inset:0}.layer>*{pointer-events:auto}.panel{left:max(16px, env(safe-area-inset-left,0px));box-sizing:border-box;background:var(--glass);-webkit-backdrop-filter:blur(14px)saturate(1.2);backdrop-filter:blur(14px)saturate(1.2);border:1px solid var(--glass-line);border-radius:14px;gap:14px;width:min(440px,100% - 32px);max-height:calc(100% - 32px);padding:22px 22px 20px;display:grid;position:absolute;top:50%;overflow-y:auto;transform:translateY(-50%)}.brand{font-family:var(--font-display);letter-spacing:.04em;text-transform:uppercase;margin:0;font-size:44px;font-weight:800;line-height:.9}.brand small{font-family:var(--font-body);letter-spacing:.14em;color:var(--accent);margin-top:8px;font-size:12px;font-weight:500;display:block}.lede{color:var(--ink-dim);max-width:46ch;margin:0;line-height:1.45}.steps{gap:6px;margin:0;padding:0;font-size:14px;list-style:none;display:grid}.steps li{color:var(--ink-dim);grid-template-columns:18px 1fr;align-items:baseline;gap:8px;display:grid}.steps li:before{content:"·";color:var(--ink-dim);text-align:center}.steps li.ok{color:var(--ink)}.steps li.ok:before{content:"✓";color:var(--accent)}.steps li.bad{color:var(--warn)}.steps li.bad:before{content:"!";color:var(--warn)}.bar{background:var(--glass-line);border-radius:2px;height:4px;overflow:hidden}.bar>i{background:var(--accent);width:0%;height:100%;transition:width .2s ease-out;display:block}button{font:inherit;color:inherit;cursor:pointer;border:0}.go{background:var(--accent);color:var(--accent-ink);font-family:var(--font-display);letter-spacing:.06em;text-transform:uppercase;border-radius:10px;justify-self:start;padding:12px 20px;font-size:20px;font-weight:800}.go:disabled{opacity:.4;cursor:default}.go:focus-visible,.chip:focus-visible{outline:2px solid var(--ink);outline-offset:2px}.fine{color:var(--ink-dim);margin:0;font-size:12px;line-height:1.4}.hud-top{padding:calc(env(safe-area-inset-top,0px) + 10px) max(16px, env(safe-area-inset-right,0px)) 0 max(16px, env(safe-area-inset-left,0px));pointer-events:none;justify-content:space-between;align-items:flex-start;gap:12px;display:flex;position:absolute;top:0;left:0;right:0}.mark{font-family:var(--font-display);letter-spacing:.08em;text-transform:uppercase;text-shadow:0 1px 8px #00000073;font-size:20px;font-weight:800}.readout{background:var(--glass);border:1px solid var(--glass-line);font-variant-numeric:tabular-nums;text-align:right;color:var(--ink-dim);border-radius:8px;padding:6px 10px;font-size:12px;line-height:1.35}.readout b{font-family:var(--font-display);color:var(--ink);letter-spacing:.02em;font-size:22px;font-weight:800}.hud-bottom{padding:0 max(16px, env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 12px) max(16px, env(safe-area-inset-left,0px));pointer-events:none;justify-content:space-between;align-items:flex-end;gap:12px;display:flex;position:absolute;bottom:0;left:0;right:0}.chips{pointer-events:auto;gap:8px;display:flex}.chip{background:var(--glass);border:1px solid var(--glass-line);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);letter-spacing:.02em;border-radius:999px;padding:9px 14px;font-size:13px;font-weight:600}.chip[aria-pressed=true]{background:var(--accent);color:var(--accent-ink);border-color:#0000}.phase{background:var(--glass);border:1px solid var(--glass-line);min-width:0;color:var(--ink-dim);border-radius:10px;flex:0 280px;gap:6px;padding:8px 12px 10px;font-size:12px;display:grid}.phase strong{color:var(--ink);font-weight:600}.rotate{text-align:center;background:var(--sea);font-family:var(--font-display);letter-spacing:.04em;text-transform:uppercase;place-items:center;padding:24px;font-size:28px;font-weight:800;display:none;position:absolute;inset:0}.rotate .chip{font-family:var(--font-body);letter-spacing:0;text-transform:none;margin-top:18px;font-size:14px}.rotate span{font-family:var(--font-body);letter-spacing:0;text-transform:none;color:var(--ink-dim);margin-top:8px;font-size:14px;font-weight:400;display:block}.copy-row{justify-items:start;gap:8px;display:grid}.panel>.chip{justify-self:start}.copy-row textarea{box-sizing:border-box;border:1px solid var(--glass-line);width:100%;height:150px;color:var(--ink);-webkit-user-select:text;user-select:text;resize:none;background:#00000059;border-radius:8px;padding:8px;font:11px/1.4 ui-monospace,SF Mono,Menlo,monospace}@media (orientation:portrait) and (max-width:700px){.rotate.armed{display:grid}}@media (max-height:460px){.panel{gap:9px;width:min(480px,100% - 32px);padding:16px 18px 14px}.brand{font-size:34px}.brand small{margin-top:5px}.lede{font-size:14px;line-height:1.35}.steps{gap:3px;font-size:13px}.go{padding:10px 18px;font-size:18px}.copy-row{gap:6px}.copy-row textarea{height:110px}}@media (prefers-reduced-motion:reduce){.bar>i{transition:none}}</style>
+  <script type="module" crossorigin src="./game.js"></script>
+	<link rel="manifest" href="./manifest.webmanifest">
+	<link rel="apple-touch-icon" href="./icon-180.png">
+	<link rel="icon" type="image/png" href="./icon-192.png">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="apple-mobile-web-app-title" content="Corniche">
+	<meta name="theme-color" content="#0b2532">
+</head>
+<body>
+<canvas id="view" aria-label="Ferrari driving on a coast road"></canvas>
+
+<div class="layer" id="boot">
+	<section class="panel" aria-labelledby="boot-title">
+		<h1 class="brand" id="boot-title">Corniche<small>CHECK-IN 1 · RAY TRACING TEST</small></h1>
+		<p class="lede">A Ferrari 458 laps a headland above the sea while the game measures how much ray tracing your phone can carry. It takes about six minutes and needs no input.</p>
+		<ul class="steps" id="steps">
+			<li id="step-gpu">Checking WebGPU</li>
+			<li id="step-assets">Loading the car and the coast</li>
+			<li id="step-build">Building the ray tracing scene</li>
+		</ul>
+		<div class="bar" aria-hidden="true"><i id="load-bar"></i></div>
+		<button class="go" id="start" disabled>Start the test</button>
+		<p class="fine" id="boot-note">Hold the phone sideways. It will get warm; that is part of what is measured.</p>
+	</section>
+</div>
+
+<div class="layer" id="hud" hidden>
+	<div class="hud-top">
+		<div class="mark">Corniche</div>
+		<div class="readout" aria-live="off"><b id="fps">--</b> fps<br><span id="res">--</span></div>
+	</div>
+	<div class="hud-bottom">
+		<div class="chips">
+			<button class="chip" id="toggle-rt" aria-pressed="true">Ray tracing on</button>
+			<button class="chip" id="next-cam">Camera</button>
+		</div>
+		<div class="phase" aria-live="polite">
+			<div><strong id="phase-name">Warming up</strong> · <span id="phase-left">--</span></div>
+			<div class="bar" aria-hidden="true"><i id="phase-bar"></i></div>
+		</div>
+	</div>
+</div>
+
+<div class="layer" id="done" hidden>
+	<section class="panel" aria-labelledby="done-title">
+		<h2 class="brand" id="done-title">Done<small>RESULTS SENT TO CLAUDE</small></h2>
+		<p class="lede" id="done-text">Thanks. The numbers are saved. Keep watching as long as you like, and flip ray tracing off and on to compare.</p>
+		<ul class="steps" id="done-list"></ul>
+		<button class="go" id="keep-watching">Keep watching</button>
+	</section>
+</div>
+
+<div class="layer" id="nogpu" hidden>
+	<section class="panel" aria-labelledby="nogpu-title">
+		<h2 class="brand" id="nogpu-title">No WebGPU<small>THE TEST CANNOT RUN IN THIS VIEW</small></h2>
+		<p class="lede" id="nogpu-text">This view does not offer WebGPU, which the ray tracing needs. What I learned has been sent to Claude. Try opening the same link in Safari.</p>
+	</section>
+</div>
+
+<div class="layer"><div class="rotate" id="rotate"><div>Turn your phone sideways<span>The test is made for landscape. If this view will not rotate, it also works upright.</span><button class="chip" id="stay-portrait">Continue upright</button></div></div></div>
+
+</body>
+</html>
